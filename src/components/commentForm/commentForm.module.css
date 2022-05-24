@@ -1,0 +1,69 @@
+.commentForm {
+    position: relative;
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.h1 {
+    opacity: 0.8;
+}
+
+.input {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 10px 0px 10px;
+    font-size: 12px;
+    resize: none;
+}
+
+.input:focus {
+    position: relative;
+    outline: none;
+    border: 2px solid #1DA1F2;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 11px;
+    margin: 20px 10px 0 10px;
+    background-color: #1DA1F2;
+}
+
+.btn:active {
+    color: rgb(247, 107, 107);
+    background-color: #63bef7;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: rgb(247, 107, 107);
+    background-color: #70c5fd;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    /* cursor: stop; */
+    color: rgb(247, 107, 107);
+    background-color: #394a55;
+}
+
+.error {
+    padding: 0;
+    margin: 0 0 -20px 0px;
+    border-radius: 10px 10px 0 0;
+    color: rgb(247, 107, 107);
+    z-index: 2;
+}
