@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { FlexContainer } from '../components/flexContainer/FlexContainer'
+import { User } from '../components/userCard/UserCard'
 import { useActions } from '../hooks/useActions'
 
 export const ListOfUsers = ({ users }) => {
@@ -10,15 +12,13 @@ export const ListOfUsers = ({ users }) => {
   return (
     <>
       <h1>Список пользователей</h1>
-      {users.map(user => (
-        <div key={user.id}>
-          <h4>{user.name}</h4>
-          <p>{user.address.city}</p>
-          <Link to={`user/${user.id}`} onClick={() => fetchCurrentUser(user.id)}>
-            Подробнее
-          </Link>
-        </div>
-      ))}
+      <FlexContainer>
+        {users.map(user => (
+          // <div key={user.id}>
+          <User user={user} key={user.id} />
+          // </div>
+        ))}
+      </FlexContainer>
     </>
   )
 }

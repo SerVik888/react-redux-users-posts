@@ -1,0 +1,42 @@
+.user_wrapper {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 30%;
+    margin: 5px;
+    padding: 14px 17px;
+    border: 1px solid gray;
+}
+
+.user_title {
+    margin: 0;
+    color: black;
+    font-size: 17px;
+}
+
+.user_city {
+    margin: 0;
+    color: gray;
+    font-size: 12px;
+}
+
+.btn {
+    margin: 20px 0 0 0;
+    padding: 10px 20px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    border: 1px solid gray;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.btn:active {
+    cursor: pointer;
+    background-color: rgb(151, 151, 151);
+    transform: scale(0.95);
+}
