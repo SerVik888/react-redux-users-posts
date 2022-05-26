@@ -28,9 +28,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<ListOfUsers users={userData} />} />
-          <Route path='/posts' element={<ListOfPosts />} />
-          <Route path='/post' element={<PostPage />} />
-          <Route path='/user' element={<UserPage user={currentUser} />} />
+          <Route path='/user/:id' element={<UserPage user={currentUser} />} />
+          <Route path='posts/:userId' element={<ListOfPosts />} />
+          <Route path='/post/:id' element={<PostPage />} />
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>

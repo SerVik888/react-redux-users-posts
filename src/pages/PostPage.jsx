@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { CommentForm } from '../components/commentForm/CommentForm'
 import { Modal } from '../components/modal/Modal'
 import { useActions } from '../hooks/useActions'
@@ -7,12 +8,15 @@ import { useActions } from '../hooks/useActions'
 export const PostPage = () => {
   const [activeModal, setActiveModal] = useState(false)
   const { currentPost, currentUser, comments } = useSelector(state => state.users)
-  const { fetchComments, postComment } = useActions()
+  const { fetchCurrentPost, fetchComments, postComment } = useActions()
+  const { id } = useParams()
+  console.log(id)
   // console.log(comments)
   useEffect(() => {
-    fetchComments(currentPost.id)
+    fetchComments(id)
+    fetchCurrentPost(id)
     // fetchComments(currentPost.id)
-  }, [setActiveModal])
+  }, [id])
 
   return (
     <>

@@ -1,14 +1,19 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 
 export const Layout = () => {
+  const navigate = useNavigate()
+  const goBack = () => {
+    navigate(-1)
+  }
+  const goHome = () => {
+    navigate('/')
+  }
   return (
     <>
       <header>
-        <Link to='/'>Список пользователей</Link>
-        <Link to='/posts'>Список постов</Link>
-        <Link to='/post'>пост</Link>
-        <Link to='/user'>Пользователь</Link>
+        <button onClick={goBack}>назад</button>
+        <button onClick={goHome}>К списку пользователей</button>
       </header>
       <Outlet />
     </>

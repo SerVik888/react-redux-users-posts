@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useActions } from '../hooks/useActions'
 
 export const UserPage = ({ user }) => {
-  const { fetchPosts } = useActions()
+  const { fetchPosts, fetchCurrentUser } = useActions()
   const { postData } = useSelector(state => state.users)
+  const { id } = useParams()
+  console.log(id)
   // console.log(currentPosts)
 
   useEffect(() => {
-    fetchPosts(user.id)
-  }, [])
+    // fetchPosts(user.id)
+    fetchCurrentUser(id)
+    fetchPosts(id)
+  }, [id])
 
   return (
     <div>
@@ -25,7 +29,7 @@ export const UserPage = ({ user }) => {
           <p>{post.body}</p>
         </div>
       ))}
-      <Link to='/posts'>больше постов</Link>
+      <Link to={`/posts/${id}`}>больше постов</Link>
     </div>
   )
 }

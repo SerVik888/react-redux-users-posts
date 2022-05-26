@@ -7,12 +7,28 @@ export const API = {
       return e
     }
   },
+  getCurrentUsers: async id => {
+    try {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+      return response.json()
+    } catch (e) {
+      throw e
+    }
+  },
   getPosts: async userId => {
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
       return response.json()
     } catch (e) {
       return e
+    }
+  },
+  getCurrentPost: async id => {
+    try {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      return response.json()
+    } catch (e) {
+      throw e
     }
   },
   getComments: async postId => {
@@ -23,7 +39,7 @@ export const API = {
       return e
     }
   },
-  sentComment: async comment => {
+  sendComment: async comment => {
     try {
       return await fetch('https://jsonplaceholder.typicode.com/comments', {
         method: 'POST',

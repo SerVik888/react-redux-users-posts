@@ -81,6 +81,15 @@ export const fetchUsers = () => async dispatch => {
   dispatch(setIsLoading(false))
 }
 
+export const fetchCurrentUser = id => async dispatch => {
+  try {
+    const user = await API.getCurrentUsers(id)
+    dispatch(setCurrentUser(user))
+  } catch (error) {
+    dispatch(setError('ошибка при получении пользователя'))
+  }
+}
+
 export const fetchPosts = userId => async dispatch => {
   dispatch(setIsLoading(true))
   const posts = await API.getPosts(userId)
@@ -90,6 +99,14 @@ export const fetchPosts = userId => async dispatch => {
     dispatch(setError(posts.message))
   }
   dispatch(setIsLoading(false))
+}
+export const fetchCurrentPost = id => async dispatch => {
+  try {
+    const post = await API.getCurrentPost(id)
+    dispatch(setCurrentPost(post))
+  } catch (error) {
+    dispatch(setError('ошибка при получении поста пользователя'))
+  }
 }
 
 export const fetchComments = postId => async dispatch => {
@@ -104,25 +121,10 @@ export const fetchComments = postId => async dispatch => {
 }
 
 export const postComment = comment => async dispatch => {
-  // dispatch(setIsLoading(true))
   try {
-    await API.sentComment(comment)
+    await API.sendComment(comment)
     dispatch(addComment(comment))
   } catch (error) {
     dispatch(setError('ошибка при отправке данных'))
   }
-
-  // if (!sentComment.message) {
-  //   dispatch(addComment(comment))
-  // } else {
-  //   dispatch(setError('ошибка при отправке данных'))
-  // }
 }
-
-// if (!comments.message) {
-//   dispatch(setComments(comments))
-// } else {
-//   dispatch(setError(comments.message))
-// }
-// dispatch(setIsLoading(false))
-// }

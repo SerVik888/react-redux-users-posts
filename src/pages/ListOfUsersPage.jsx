@@ -1,10 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useActions } from '../hooks/useActions'
 
 export const ListOfUsers = ({ users }) => {
-  const { setCurrentUser } = useActions()
-  // console.log(Link)
+  // const { setCurrentUser } = useActions()
+  const { fetchCurrentUser } = useActions()
+  // const param = useParams()
+  // console.log(param)
   return (
     <>
       <h1>Список пользователей</h1>
@@ -12,7 +14,7 @@ export const ListOfUsers = ({ users }) => {
         <div key={user.id}>
           <h4>{user.name}</h4>
           <p>{user.address.city}</p>
-          <Link to='user' onClick={() => setCurrentUser(user)}>
+          <Link to={`user/${user.id}`} onClick={() => fetchCurrentUser(user.id)}>
             Подробнее
           </Link>
         </div>
