@@ -27,7 +27,9 @@ export const PostPage = () => {
       <h2>комментарии</h2>
       <FlexContainer>
         {comments.map(comment => (
-          <Comment key={comment.id} comment={comment} />
+          <div key={comment.id}>
+            <Comment comment={comment} />
+          </div>
         ))}
       </FlexContainer>
       <button onClick={() => setActiveModal(true)}>Оставить комментарий</button>
