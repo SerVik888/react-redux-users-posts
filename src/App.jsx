@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import { useActions } from './hooks/useActions'
 import { Routes, Route } from 'react-router-dom'
 import { Layout } from './components/layout/Layout'
-import { fetchUsers } from './store/reducers/userReducer'
 import { ListOfUsers } from './pages/ListOfUsersPage'
 import { ListOfPosts } from './pages/ListOfPostsPage'
 import { PostPage } from './pages/PostPage'
@@ -11,15 +10,13 @@ import { UserPage } from './pages/UserPage'
 import { NotFound } from './pages/NotFoundPage'
 
 function App() {
-  const { userData, isLoading, error, currentUser, currentPost, postData, comments } = useSelector(state => state.users)
-  // const dispatch = useDispatch()
+  const { userData, currentUser } = useSelector(state => state.users)
+
   const { fetchUsers } = useActions()
 
   useEffect(() => {
     fetchUsers()
   }, [])
-  // console.log(error)
-  // console.log(isLoading)
 
   return (
     <div className='App'>

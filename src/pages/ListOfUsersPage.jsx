@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
 import { FlexContainer } from '../components/UI/flexContainer/FlexContainer'
 import { UserCard } from '../components/userCard/UserCard'
 import { useActions } from '../hooks/useActions'

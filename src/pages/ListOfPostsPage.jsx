@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Post } from '../components/post/Post'
 import { useActions } from '../hooks/useActions'
 
@@ -13,7 +13,7 @@ export const ListOfPosts = () => {
   const goPostDescription = postId => {
     navigate(`/post/${postId}`)
   }
-  console.log(userId)
+
   useEffect(() => {
     fetchPosts(userId)
   }, [userId])
