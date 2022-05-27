@@ -34,7 +34,8 @@ https://servik888.github.io/react-redux-users-posts/
 
 ## Текст задания
 
-- Стек:
+#### Стек:
+
 - языки - JavaScript/TypeScript.
 - Фреймворк - React/Vue/Angular, state-management на ваш выбор
 
