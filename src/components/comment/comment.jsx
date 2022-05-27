@@ -5,11 +5,11 @@ export const Comment = ({ comment }) => {
   return (
     <div>
       <hr />
-      <h5>{comment.name}</h5>
-      <p>
+      <h5 className={s.comment_title}>{comment.name}</h5>
+      <p className={s.comment_email}>
         <b>{comment.email}</b>
       </p>
-      <p>{comment.body}</p>
+      <p className={s.comment_body}>{comment.body}</p>
     </div>
   )
 }

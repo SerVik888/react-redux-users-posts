@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { PostCard } from '../components/postCard/PostCard'
 import { FlexContainer } from '../components/UI/flexContainer/FlexContainer'
-import { UserDescription } from '../components/userDescription/userDescription'
+import { UserDescription } from '../components/userDescription/UserDescription'
 import { useActions } from '../hooks/useActions'
 
 export const UserPage = ({ user }) => {

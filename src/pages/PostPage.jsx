@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { Comment } from '../components/comment/comment'
+import { Comment } from '../components/comment/Comment'
 import { CommentForm } from '../components/commentForm/CommentForm'
 // import { Post } from '../components/post/Post'
-import { PostDescription } from '../components/postDescription/postDescription'
+import { PostDescription } from '../components/postDescription/PostDescription'
+import { FlexContainer } from '../components/UI/flexContainer/FlexContainer'
 import { Modal } from '../components/UI/modal/Modal'
 import { useActions } from '../hooks/useActions'
 
@@ -25,9 +26,11 @@ export const PostPage = () => {
       <PostDescription post={currentPost} />
       <hr />
       <h2>комментарии</h2>
-      {comments.map(comment => (
-        <Comment key={comment.id} comment={comment} />
-      ))}
+      <FlexContainer>
+        {comments.map(comment => (
+          <Comment key={comment.id} comment={comment} />
+        ))}
+      </FlexContainer>
       <button onClick={() => setActiveModal(true)}>Оставить комментарий</button>
       <Modal activeModal={activeModal} setActiveModal={setActiveModal}>
         <CommentForm postComment={postComment} setActiveModal={setActiveModal} postId={currentPost.id} />

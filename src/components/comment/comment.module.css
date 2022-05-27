@@ -1,0 +1,25 @@
+.comment_title {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 30%;
+    margin: 5px;
+    padding: 14px 17px;
+    border: 1px solid gray;
+}
+
+.comment_email {
+    margin: 0 0 10px 0;
+    color: black;
+    font-size: 17px;
+}
+
+.comment_body {
+    margin: 0;
+    color: gray;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
