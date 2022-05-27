@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
-import './App.css'
 import { useActions } from './hooks/useActions'
 import { Routes, Route } from 'react-router-dom'
-import { Layout } from './components/Layout'
+import { Layout } from './components/layout/Layout'
 import { fetchUsers } from './store/reducers/userReducer'
 import { ListOfUsers } from './pages/ListOfUsersPage'
 import { ListOfPosts } from './pages/ListOfPostsPage'
@@ -20,7 +18,7 @@ function App() {
   useEffect(() => {
     fetchUsers()
   }, [])
-  console.log(error)
+  // console.log(error)
   // console.log(isLoading)
 
   return (

@@ -1,22 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { FlexContainer } from '../components/flexContainer/FlexContainer'
-import { User } from '../components/userCard/UserCard'
+import { UserCard } from '../components/userCard/UserCard'
 import { useActions } from '../hooks/useActions'
 
-export const ListOfUsers = ({ users }) => {
-  // const { setCurrentUser } = useActions()
-  const { fetchCurrentUser } = useActions()
-  // const param = useParams()
-  // console.log(param)
+export const ListOfUsers = () => {
+  const { userData } = useSelector(state => state.users)
+  const { fetchUsers } = useActions()
+
+  useEffect(() => {
+    fetchUsers()
+  }, [])
+
   return (
     <>
       <h1>Список пользователей</h1>
       <FlexContainer>
-        {users.map(user => (
-          // <div key={user.id}>
-          <User user={user} key={user.id} />
-          // </div>
+        {userData.map(user => (
+          <UserCard user={user} key={user.id} />
         ))}
       </FlexContainer>
     </>
