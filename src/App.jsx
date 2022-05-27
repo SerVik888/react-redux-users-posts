@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
-import { useActions } from './hooks/useActions'
+import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Layout } from './components/layout/Layout'
 import { ListOfUsers } from './pages/ListOfUsersPage'
@@ -10,20 +8,12 @@ import { UserPage } from './pages/UserPage'
 import { NotFound } from './pages/NotFoundPage'
 
 function App() {
-  const { userData, currentUser } = useSelector(state => state.users)
-
-  const { fetchUsers } = useActions()
-
-  useEffect(() => {
-    fetchUsers()
-  }, [])
-
   return (
     <div className='App'>
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route index element={<ListOfUsers users={userData} />} />
-          <Route path='user/:id' element={<UserPage user={currentUser} />} />
+          <Route index element={<ListOfUsers />} />
+          <Route path='user/:id' element={<UserPage />} />
           <Route path='posts/:userId' element={<ListOfPosts />} />
           <Route path='post/:id' element={<PostPage />} />
           <Route path='*' element={<NotFound />} />

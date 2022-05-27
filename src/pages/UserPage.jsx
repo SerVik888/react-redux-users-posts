@@ -8,7 +8,7 @@ import { useActions } from '../hooks/useActions'
 
 export const UserPage = ({ user }) => {
   const { fetchPosts, fetchCurrentUser } = useActions()
-  const { postData } = useSelector(state => state.users)
+  const { postData, currentUser } = useSelector(state => state.users)
   const { id } = useParams()
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const UserPage = ({ user }) => {
 
   return (
     <div>
-      <UserDescription user={user} />
+      <UserDescription user={currentUser} />
       <FlexContainer>
         {postData.slice(0, 3).map(post => (
           <PostCard key={post.id} post={post} />
