@@ -41,7 +41,7 @@ https://servik888.github.io/react-redux-users-posts/
 
 Используя сервис https://jsonplaceholder.typicode.com/ реализовать псевдо-web-приложение/
 
-Список экранов:
+#### Список экранов:
 
 1. Список пользователей. Вывод списка, полученного по апи в виде карточек вида
    [name,surname]
