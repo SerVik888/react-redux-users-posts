@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import s from './userCard.module.css'
 
-export const User = ({ user }) => {
+export const UserCard = ({ user }) => {
   const navigate = useNavigate()
   const goUserPage = () => {
     navigate(`user/${user.id}`)
