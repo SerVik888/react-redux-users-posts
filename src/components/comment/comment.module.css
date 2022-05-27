@@ -1,4 +1,4 @@
-.comment_title {
+.comment_wrapper {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
