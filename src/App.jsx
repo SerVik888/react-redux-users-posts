@@ -21,11 +21,12 @@ function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route path='/' element={<Layout />}>
+        {/* <Route path='/' element={<Layout />}> */}
+        <Route into path='react-redux-users-posts/' element={<Layout />}>
           <Route index element={<ListOfUsers users={userData} />} />
-          <Route path='/user/:id' element={<UserPage user={currentUser} />} />
+          <Route path='user/:id' element={<UserPage user={currentUser} />} />
           <Route path='posts/:userId' element={<ListOfPosts />} />
-          <Route path='/post/:id' element={<PostPage />} />
+          <Route path='post/:id' element={<PostPage />} />
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
