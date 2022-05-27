@@ -1,9 +1,5 @@
 # ТЕСТОВОЕ ЗАДАНИЕ НА ПОЗИЦИЮ FRONTEND РАЗРАБОТЧИК JUNIOR
 
-## Ссылка на страницу
-
-https://servik888.github.io/react-redux-users-posts/
-
 ## Основные команды для работы
 
 - Скачайте или клонируйте код
@@ -11,7 +7,6 @@ https://servik888.github.io/react-redux-users-posts/
 
 - установить зависимости - `npm install`
 - запуск проекта - `npm run start`
-- деплой проекта `npm run deploy`
 
 ## Описание приложения:
 
