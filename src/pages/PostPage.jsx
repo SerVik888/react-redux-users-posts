@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { Comment } from '../components/comment/Comment'
+import { Comment } from '../components/comment/comment'
 import { CommentForm } from '../components/commentForm/CommentForm'
-import { PostDescription } from '../components/postDescription/PostDescription'
+import { PostDescription } from '../components/postDescription/postDescription'
 import { FlexContainer } from '../components/UI/flexContainer/FlexContainer'
 import { Modal } from '../components/UI/modal/Modal'
 import { useActions } from '../hooks/useActions'
@@ -27,9 +27,7 @@ export const PostPage = () => {
       <h2>комментарии</h2>
       <FlexContainer>
         {comments.map(comment => (
-          <div key={comment.id}>
-            <Comment comment={comment} />
-          </div>
+          <Comment key={comment.id} comment={comment} />
         ))}
       </FlexContainer>
       <button onClick={() => setActiveModal(true)}>Оставить комментарий</button>
