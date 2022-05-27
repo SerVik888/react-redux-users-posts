@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# ТЕСТОВОЕ ЗАДАНИЕ НА ПОЗИЦИЮ FRONTEND РАЗРАБОТЧИК JUNIOR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Ссылка на страницу
 
-## Available Scripts
+https://servik888.github.io/react-redux-users-posts/
 
-In the project directory, you can run:
+## Основные команды для работы
 
-### `npm start`
+- Скачайте или клонируйте код
+- Зайдите в папку проекта через консоль или откройте в редакторе
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- установить зависимости - `npm install`
+- запуск проекта - `npm run start`
+- деплой проекта `npm run deploy`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Описание приложения:
 
-### `npm test`
+- В шапку есть две кнопри навигации по приложению
+- При входе на страницу отображается список пользователей в виде карточек.
+- При клике на кнопку мы переходим в на страницу пользователя , где есть описание и сокращённый список из трёх постов.
+- При клике на кнопку в конце страницы мы переходим на список всех постов пользователя.
+- На странице постов мы можем перейти в пост посмотреть описание и оставить коментарий
+- При нажатии на кнопку открывается модальное окно где можно оставить комментарий к посту
+- Переключение между страницами происходит без перезагрузки.
+- Страница таблицы должна отображаться в URL браузера.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Cписок используемых библиотек
 
-### `npm run build`
+- react
+- redux
+- react-redux
+- redux-thunk
+- react-router-dom
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Текст задания
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-Стек:
+-языки - JavaScript/TypeScript.
+-Фреймворк - React/Vue/Angular, state-management на ваш выбор
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Используя сервис https://jsonplaceholder.typicode.com/ реализовать псевдо-web-приложение/
 
-### `npm run eject`
+Список экранов:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Список пользователей. Вывод списка, полученного по апи в виде карточек вида
+   [name,surname]
+2. Страница пользователя. Подробный вывод информации о пользователе
+   [
+   сверху - username
+   (далее по списку)
+   name
+   email
+   phone
+   website
+   company[name,bs]
+   Список из 3-х превью (заголовок, 1 строчка текста...) постов пользователя + возможность посмотреть все
+   ]
+3. список постов пользователя. Все посты в формате превью + возможность перейти на детальную
+4. детальная страница поста со списком всех комментариев c именем и email. Также, внизу экрана добавить кнопку добавления комментария. По клику открывается форма с 3 полями имя, email, текст комментария и кнопкой "отправить/send" Отправку сделать на тот же сервис.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Требования к внешнему виду: дизайн из Figma https://www.figma.com/file/IpjzEBgEd5Tk3ry5g347Ux/Untitled
