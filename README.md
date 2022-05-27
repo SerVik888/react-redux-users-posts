@@ -34,9 +34,9 @@ https://servik888.github.io/react-redux-users-posts/
 
 ## Текст задания
 
--Стек:
--языки - JavaScript/TypeScript.
--Фреймворк - React/Vue/Angular, state-management на ваш выбор
+- Стек:
+- языки - JavaScript/TypeScript.
+- Фреймворк - React/Vue/Angular, state-management на ваш выбор
 
 Используя сервис https://jsonplaceholder.typicode.com/ реализовать псевдо-web-приложение/
 
