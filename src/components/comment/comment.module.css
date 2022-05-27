@@ -19,7 +19,4 @@
     margin: 0;
     color: gray;
     font-size: 15px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
