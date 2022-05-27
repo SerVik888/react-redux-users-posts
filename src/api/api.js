@@ -7,7 +7,7 @@ export const API = {
       return e
     }
   },
-  getCurrentUsers: async id => {
+  getCurrentUser: async id => {
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       return response.json()
