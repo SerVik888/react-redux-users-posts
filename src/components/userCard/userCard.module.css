@@ -20,24 +20,3 @@
     color: gray;
     font-size: 12px;
 }
-
-.btn {
-    max-width: 180px;
-    margin: 20px 0 0 0;
-    padding: 10px 20px;
-    color: white;
-    background-color: black;
-    font-weight: bold;
-    border: 1px solid gray;
-}
-
-.btn:hover {
-    cursor: pointer;
-    background-color: gray;
-}
-
-.btn:active {
-    cursor: pointer;
-    background-color: rgb(151, 151, 151);
-    transform: scale(0.95);
-}

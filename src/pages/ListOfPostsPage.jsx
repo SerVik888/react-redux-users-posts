@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Post } from '../components/post/Post'
+import { Title } from '../components/UI/title/Title'
 import { useActions } from '../hooks/useActions'
 
 export const ListOfPosts = () => {
@@ -20,7 +21,7 @@ export const ListOfPosts = () => {
 
   return (
     <>
-      <h1>Список постов</h1>
+      <Title>Список постов</Title>
       {postData.map(post => (
         <Post post={post} id={post.id} goPostDescription={goPostDescription} key={post.id} />
       ))}

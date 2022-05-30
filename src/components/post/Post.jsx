@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '../UI/button/Button'
 import s from './post.module.css'
 
 export const Post = ({ post, id, goPostDescription }) => {
@@ -6,9 +7,9 @@ export const Post = ({ post, id, goPostDescription }) => {
     <div className={s.postWrapper}>
       <h4>{post.title}</h4>
       <p>{post.body}</p>
-      <button className={s.btn} onClick={() => goPostDescription(id)}>
+      <Button theme={'dark'} onClick={() => goPostDescription(id)}>
         Подробнее
-      </button>
+      </Button>
     </div>
   )
 }

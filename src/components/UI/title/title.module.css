@@ -1,0 +1,9 @@
+.title {
+    margin: 10px;
+}
+
+.white_title {
+    line-height: 0.9;
+    margin: 10px;
+    color: white;
+}

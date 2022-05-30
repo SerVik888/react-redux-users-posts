@@ -4,7 +4,8 @@ export const API = {
       const response = await fetch(`https://jsonplaceholder.typicode.com/users`)
       return response.json()
     } catch (e) {
-      return e
+      console.log(e)
+      throw e
     }
   },
   getCurrentUser: async id => {
@@ -12,6 +13,7 @@ export const API = {
       const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       return response.json()
     } catch (e) {
+      console.log(e)
       throw e
     }
   },
@@ -20,7 +22,8 @@ export const API = {
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
       return response.json()
     } catch (e) {
-      return e
+      console.log(e)
+      throw e
     }
   },
   getCurrentPost: async id => {
@@ -28,6 +31,7 @@ export const API = {
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
       return response.json()
     } catch (e) {
+      console.log(e)
       throw e
     }
   },
@@ -36,7 +40,8 @@ export const API = {
       const response = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
       return response.json()
     } catch (e) {
-      return e
+      console.log(e)
+      throw e
     }
   },
   sendComment: async comment => {
@@ -49,6 +54,7 @@ export const API = {
         },
       })
     } catch (e) {
+      console.log(e)
       throw e
     }
   },

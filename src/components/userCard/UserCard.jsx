@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Button } from '../UI/button/Button'
 import s from './userCard.module.css'
 
 export const UserCard = ({ user }) => {
@@ -12,9 +13,9 @@ export const UserCard = ({ user }) => {
       <div className={s.user_wrapper}>
         <h5 className={s.user_title}>{user.name}</h5>
         <p className={s.user_city}>{user.address.city}</p>
-        <button className={s.btn} onClick={goUserPage}>
+        <Button theme={'dark'} onClick={goUserPage}>
           Смотреть профиль
-        </button>
+        </Button>
       </div>
     </>
   )

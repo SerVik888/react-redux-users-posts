@@ -1,0 +1,34 @@
+.btn {
+    margin: 10px 5px;
+    max-width: 180px;
+    padding: 10px 25px;
+    font-weight: bold;
+    border: 1px solid gray;
+}
+
+.dark {
+    color: white;
+    background-color: black;
+}
+
+.white {
+    color: black;
+    background-color: white;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.btn:active {
+    cursor: pointer;
+    background-color: rgb(151, 151, 151);
+    transform: scale(0.95);
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    color: #999999;
+    background-color: #394a55;
+}

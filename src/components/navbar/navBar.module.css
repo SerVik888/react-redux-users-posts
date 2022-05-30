@@ -22,23 +22,3 @@
     text-transform: uppercase;
     color: white;
 }
-
-.btn {
-    margin: 10px;
-    padding: 12px 30px;
-    color: black;
-    background-color: white;
-    font-weight: bold;
-    border: 1px solid gray;
-}
-
-.btn:hover {
-    cursor: pointer;
-    background-color: gray;
-}
-
-.btn:active {
-    cursor: pointer;
-    background-color: rgb(151, 151, 151);
-    transform: scale(0.95);
-}

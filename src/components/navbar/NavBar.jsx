@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Title } from '../UI/title/Title'
 import s from './navBar.module.css'
+import { Button } from '../UI/button/Button'
 
 export const NavBar = () => {
   const navigate = useNavigate()
@@ -15,15 +17,17 @@ export const NavBar = () => {
     <header className={s.header}>
       <div className={s.header_container}>
         <div>
-          <h1 className={s.header_title}>Список пользователей</h1>
+          <Title theme={'white'} className={s.header_title}>
+            Список пользователей
+          </Title>
         </div>
         <div>
-          <button className={s.btn} onClick={goBack}>
-            назад
-          </button>
-          <button className={s.btn} onClick={goHome}>
+          <Button theme={'white'} onClick={goBack}>
+            Назад
+          </Button>{' '}
+          <Button theme={'white'} onClick={goHome}>
             На главную
-          </button>
+          </Button>
         </div>
       </div>
     </header>

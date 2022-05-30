@@ -1,10 +1,11 @@
 import React from 'react'
+import { Title } from '../UI/title/Title'
 import s from './userDescription.module.css'
 
 export const UserDescription = ({ user }) => {
   return (
     <>
-      <h1>Страница пользователя {user.name}</h1>
+      <Title>Страница пользователя {user.name}</Title>
       <ul>
         <li>{user.username}</li>
         <li>{user.email}</li>

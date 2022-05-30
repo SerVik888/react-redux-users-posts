@@ -31,21 +31,25 @@ export const userReducer = (state = initialState, action) => {
       return {
         ...state,
         currentUser: action.user,
+        isLoading: false,
       }
     case SET_POSTS:
       return {
         ...state,
         postData: action.posts,
+        isLoading: false,
       }
     case SET_CURRENT_POST:
       return {
         ...state,
         currentPost: action.post,
+        isLoading: false,
       }
     case SET_COMMENTS:
       return {
         ...state,
         comments: action.comments,
+        isLoading: false,
       }
     case ADD_COMMENT:
       return {
@@ -72,13 +76,12 @@ export const addComment = comment => ({ type: ADD_COMMENT, comment })
 
 export const fetchUsers = () => async dispatch => {
   dispatch(setIsLoading(true))
-  const users = await API.getUsers()
-  if (!users.message) {
+  try {
+    const users = await API.getUsers()
     dispatch(setUsers(users))
-  } else {
-    dispatch(setError(users.message))
+  } catch (error) {
+    dispatch(setError('ошибка при получении пользователей'))
   }
-  dispatch(setIsLoading(false))
 }
 
 export const fetchCurrentUser = id => async dispatch => {
@@ -86,19 +89,18 @@ export const fetchCurrentUser = id => async dispatch => {
     const user = await API.getCurrentUser(id)
     dispatch(setCurrentUser(user))
   } catch (error) {
-    dispatch(setError('ошибка при получении пользователя'))
+    dispatch(setError('ошибка при получении текущего пользователя пользователя'))
   }
 }
 
 export const fetchPosts = userId => async dispatch => {
-  dispatch(setIsLoading(true))
-  const posts = await API.getPosts(userId)
-  if (!posts.message) {
+  try {
+    dispatch(setIsLoading(true))
+    const posts = await API.getPosts(userId)
     dispatch(setPosts(posts))
-  } else {
-    dispatch(setError(posts.message))
+  } catch (error) {
+    dispatch(setError('ошибка при получении постов'))
   }
-  dispatch(setIsLoading(false))
 }
 export const fetchCurrentPost = id => async dispatch => {
   try {
@@ -110,14 +112,13 @@ export const fetchCurrentPost = id => async dispatch => {
 }
 
 export const fetchComments = postId => async dispatch => {
-  dispatch(setIsLoading(true))
-  const comments = await API.getComments(postId)
-  if (!comments.message) {
+  try {
+    dispatch(setIsLoading(true))
+    const comments = await API.getComments(postId)
     dispatch(setComments(comments))
-  } else {
-    dispatch(setError(comments.message))
+  } catch (error) {
+    dispatch(setError('ошибка при получении комментариев'))
   }
-  dispatch(setIsLoading(false))
 }
 
 export const postComment = comment => async dispatch => {
