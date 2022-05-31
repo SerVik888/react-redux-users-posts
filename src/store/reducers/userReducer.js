@@ -12,7 +12,7 @@ const ADD_COMMENT = 'ADD_COMMENT'
 const initialState = {
   userData: [],
   postData: [],
-  isLoading: false,
+  isLoading: true,
   error: '',
   currentUser: {},
   currentPost: {},
@@ -85,6 +85,7 @@ export const fetchUsers = () => async dispatch => {
 }
 
 export const fetchCurrentUser = id => async dispatch => {
+  dispatch(setIsLoading(true))
   try {
     const user = await API.getCurrentUser(id)
     dispatch(setCurrentUser(user))
@@ -94,6 +95,7 @@ export const fetchCurrentUser = id => async dispatch => {
 }
 
 export const fetchPosts = userId => async dispatch => {
+  dispatch(setIsLoading(true))
   try {
     dispatch(setIsLoading(true))
     const posts = await API.getPosts(userId)
@@ -103,6 +105,7 @@ export const fetchPosts = userId => async dispatch => {
   }
 }
 export const fetchCurrentPost = id => async dispatch => {
+  dispatch(setIsLoading(true))
   try {
     const post = await API.getCurrentPost(id)
     dispatch(setCurrentPost(post))
@@ -112,6 +115,7 @@ export const fetchCurrentPost = id => async dispatch => {
 }
 
 export const fetchComments = postId => async dispatch => {
+  dispatch(setIsLoading(true))
   try {
     dispatch(setIsLoading(true))
     const comments = await API.getComments(postId)
