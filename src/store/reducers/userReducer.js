@@ -90,7 +90,7 @@ export const fetchCurrentUser = id => async dispatch => {
     const user = await API.getCurrentUser(id)
     dispatch(setCurrentUser(user))
   } catch (error) {
-    dispatch(setError('ошибка при получении текущего пользователя пользователя'))
+    dispatch(setError('ошибка при получении текущего пользователя'))
   }
 }
 
